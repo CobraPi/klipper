@@ -35,10 +35,10 @@ class MCU_counter:
         self._callback = cb
 
     def _handle_counter_state(self, params):
-        clock = self._mcu.clock32_to_clock64(params['time'])
+        clock = self._mcu.clock32_to_clock64(params['clock'])
         time = self._mcu.clock_to_print_time(clock)
 
-        count_clock = self._mcu.clock32_to_clock64(params['count_time'])
+        count_clock = self._mcu.clock32_to_clock64(params['count_clock'])
         count_time = self._mcu.clock_to_print_time(count_clock)
 
         # handle 32-bit counter overflow

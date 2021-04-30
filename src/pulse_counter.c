@@ -92,7 +92,7 @@ counter_task(void)
         uint32_t count_time = c->last_count_time;
         c->flags &= ~CF_PENDING;
         irq_enable();
-        sendf("counter_state oid=%c time=%u count=%u count_time=%u",
+        sendf("counter_state oid=%c clock=%u count=%u count_clock=%u",
               oid, time, count, count_time);
     }
 }
